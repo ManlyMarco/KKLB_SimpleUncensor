@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using BepInEx;
 using HarmonyLib;
 using sv08;
@@ -61,26 +60,20 @@ namespace KKLB_SimpleUncensor
             return UncensorTex;
         }
         
-        private static readonly MethodInfo _MosShowM = AccessTools.Method(typeof(MosaicAttach), "Show");
-        private static readonly FieldInfo _MosOwnerChrF = AccessTools.Field(typeof(MosaicAttach), "ownerChr");
-        private static readonly object[] _ParametersFals = { false };
-        private static readonly object[] _ParametersOrig = { false };
         [HarmonyPrefix]
         [HarmonyPatch(typeof(MosaicAttach), nameof(MosaicAttach.ShowMosaics))]
         private static bool DisableMosaicsPatch(GameObject _tgtChr, bool _bDisp)
         {
             // Hide all mosaics except for the dick (HideMesh_10), it will get material swapped later
             // Patching MosaicAttach.Show doesn't work as expected because of inlining
-            _ParametersOrig[0] = _bDisp;
-
             foreach (var mos in _tgtChr.GetComponentsInChildren<MosaicAttach>())
             {
-                if ((GameObject)_MosOwnerChrF.GetValue(mos) == _tgtChr)
+                if (mos.ownerChr == _tgtChr)
                 {
                     if (mos.name.StartsWith("HideMesh_10"))
-                        _MosShowM.Invoke(mos, _ParametersOrig);
+                        mos.Show(_bDisp);
                     else
-                        _MosShowM.Invoke(mos, _ParametersFals);
+                        mos.Show(false);
                 }
             }
 
@@ -89,7 +82,7 @@ namespace KKLB_SimpleUncensor
 
         [HarmonyPostfix]
         [HarmonyWrapSafe]
-        [HarmonyPatch(typeof(PartsScriptBase), "Start")]
+        [HarmonyPatch(typeof(PartsScriptBase), nameof(PartsScriptBase.Start))]
         private static void TextureReplacePatch(PartsScriptBase __instance, SkinnedMeshRenderer[] ___skinMeshes)
         {
             // Replace female body textures
