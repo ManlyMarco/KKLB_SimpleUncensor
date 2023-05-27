@@ -1,7 +1,7 @@
 # KKLB_SimpleUncensor
 A simple Uncensor for the game KoiKoi Love Blossoms (恋来い温泉物語) by ULTRANOVA Entertainment. It removes the heart censors, replaces female body texture with a custom one, and changes the meat stick color to match the rest of the male body.
 
-You can buy the game [on Steam](https://store.steampowered.com/app/1840350/KoiKoi_VR_Love_Blossoms/) or [on DLsite](https://www.dlsite.com/pro/work/=/product_id/VJ01000460.html). Both versions are pretty much identical, but on Steam you get both VR and non-VR version (as a DLC), while on DLsite you can only get one or the other.
+You can buy the game [on Steam](https://store.steampowered.com/app/1840350/KoiKoi_VR_Love_Blossoms/) or [on DLsite](https://www.dlsite.com/pro/work/=/product_id/VJ01000460.html). The purchase contains both VR and non-VR versions (non-VR version is available as free DLC on Steam).
 
 If the game is in Japanese, make sure you have the latest version and go to Settings (button with a cog icon in main menu) and select English in the dropdown setting at the bottom of the list.
 
