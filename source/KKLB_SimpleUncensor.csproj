@@ -41,11 +41,15 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\IllusionLibs.KoiKoiLB.Assembly-CSharp.2023.5.27\lib\net35\Assembly-CSharp.dll</HintPath>
+      <HintPath>packages\IllusionLibs.KoiKoiLB.Assembly-CSharp.2023.5.27.1\lib\net45\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="BepInEx, Version=5.4.20.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\IllusionLibs.BepInEx.5.4.20\lib\net35\BepInEx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="netstandard, Version=2.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\IllusionLibs.KoiKoiLB.Assembly-CSharp.2023.5.27.1\lib\net45\netstandard.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sirenix.Serialization, Version=2.1.13.0, Culture=neutral, processorArchitecture=MSIL">
@@ -105,11 +109,11 @@
   <Import Project="packages\IllusionLibs.KoikatsuSunshine.UnityEngine.IMGUIModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.IMGUIModule.targets" Condition="Exists('packages\IllusionLibs.KoikatsuSunshine.UnityEngine.IMGUIModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.IMGUIModule.targets')" />
   <Import Project="packages\IllusionLibs.KoikatsuSunshine.UnityEngine.InputLegacyModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.InputLegacyModule.targets" Condition="Exists('packages\IllusionLibs.KoikatsuSunshine.UnityEngine.InputLegacyModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.InputLegacyModule.targets')" />
   <Import Project="packages\IllusionLibs.KoikatsuSunshine.UnityEngine.UI.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.UI.targets" Condition="Exists('packages\IllusionLibs.KoikatsuSunshine.UnityEngine.UI.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.UI.targets')" />
-  <Import Project="packages\IllusionLibs.KoiKoiLB.Assembly-CSharp.2023.5.27\build\IllusionLibs.KoiKoiLB.Assembly-CSharp.targets" Condition="Exists('packages\IllusionLibs.KoiKoiLB.Assembly-CSharp.2023.5.27\build\IllusionLibs.KoiKoiLB.Assembly-CSharp.targets')" />
+  <Import Project="packages\IllusionLibs.KoiKoiLB.Assembly-CSharp.2023.5.27.1\build\IllusionLibs.KoiKoiLB.Assembly-CSharp.targets" Condition="Exists('packages\IllusionLibs.KoiKoiLB.Assembly-CSharp.2023.5.27.1\build\IllusionLibs.KoiKoiLB.Assembly-CSharp.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\IllusionLibs.KoiKoiLB.Assembly-CSharp.2023.5.27\build\IllusionLibs.KoiKoiLB.Assembly-CSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\IllusionLibs.KoiKoiLB.Assembly-CSharp.2023.5.27\build\IllusionLibs.KoiKoiLB.Assembly-CSharp.targets'))" />
+    <Error Condition="!Exists('packages\IllusionLibs.KoiKoiLB.Assembly-CSharp.2023.5.27.1\build\IllusionLibs.KoiKoiLB.Assembly-CSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\IllusionLibs.KoiKoiLB.Assembly-CSharp.2023.5.27.1\build\IllusionLibs.KoiKoiLB.Assembly-CSharp.targets'))" />
   </Target>
 </Project>
